@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joshua Auvaa | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@300;400;500&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16.png">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <span class="nav-logo">joshuauvaa</span>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <!-- <div class="hero-eyebrow fade-up">Making products easier to use, and easier to build.</div> -->
+      <h1 class="hero-name fade-up delay-1">Joshua <span class="last">Auvaa</span></h1>
+      <p class="hero-tagline fade-up delay-2">
+        Systems-minded. User-driven.
+      </p>
+      <div class="hero-cta fade-up delay-3">
+        <a href="#projects" class="btn-primary">See my work</a>
+        <a href="#contact" class="btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="hero-avatar fade-up delay-2">
+      <div class="hero-avatar-glow"></div>
+      <img src="assets/avatar.png" alt="Illustrated avatar of Josh waving" />
+    </div>
+    <div class="hero-scroll-hint fade-up delay-4">
+      <!-- <span>scroll</span>
+      <div class="scroll-line"></div> -->
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about reveal" id="about">
+    <div class="about-grid">
+      <div class="about-text">
+        <div class="section-eyebrow">// about me</div>
+        <h2>Always Learning.</h2>
+        <p>
+          I've worn a lot of different hats. At the University of Washington, I studied Informatics with a focus in
+          Human-Computer Interaction. My coursework balanced development and design, always in service of building
+          things that actually help people.
+        <p>
+          That mindset followed me everywhere after. As a Student IT Consultant, it meant troubleshooting for technical
+          and non-technical users alike, never losing sight of the person behind the ticket. As a marketing intern, it
+          meant auditing brand recognizability and reputability to make sure the people on the other end of an ML-driven
+          model could actually trust what they were seeing. Now, in customer service, the recurring pain points I hear
+          have me thinking about where the experience could improve.
+        </p>
+        <p>
+          Throughout all of my different roles, one instinct remains the same: <strong>center the user</strong>.
+        </p>
+        <div class="about-pills">
+          <span class="pill">Frontend Development</span>
+          <span class="pill">User Research</span>
+          <span class="pill">SQL</span>
+          <span class="pill">Technical Support</span>
+          <span class="pill">ServiceNow</span>
+          <span class="pill">AWS</span>
+        </div>
+      </div>
+      <div class="about-visual">
+        <div class="about-card">
+          <div class="about-card-label">Current Role</div>
+          <div class="about-card-value">Delivery Station Liasion @ Amazon</div>
+          <div class="about-card-sub">Customer Service · Problem Solving · Communication · Root Cause Analysis</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Target</div>
+          <div class="about-card-value">Big Tech</div>
+          <div class="about-card-sub">Customer Service/Support → Product Management</div>
+        </div>
+        <div class="about-card">
+          <div class="about-card-label">Background</div>
+          <div class="about-card-value">IT Service Desk · UX · Product</div>
+          <div class="about-card-sub">Tier 1 Support · Customer Experience · Cross-Functional Collaboration</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="projects-section reveal" id="projects">
+    <div class="section-eyebrow">// projects</div>
+    <h2 class="projects-heading">Things I've Worked On...</h2>
+
+    <div class="projects-grid">
+
+      <!-- <a href="projects/cloud-resume.html" class="project-card reveal-card">
+        <div class="card-tag">AWS · S3 · CloudFront · Lambda · DynamoDB</div>
+        <h3>Cloud Resume Challenge</h3>
+        <p>A fully serverless resume site with an API-driven visitor counter — deployed on AWS using IaC and CI/CD.
+          Built to prove cloud skills end-to-end.</p>
+        <div class="card-footer">
+          <span class="card-status live">Live</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a> -->
+
+      <a href="projects/dawgride.html" class="project-card reveal-card">
+        <div class="card-tag">Product Management · UX Research · MVP</div>
+        <h3>DawgRide</h3>
+        <p>A companion safety app for UW's late-night shuttle services. Led as de facto PM across user research,
+          personas, and a real mid-build pivot driven by user testing data.</p>
+        <div class="card-footer">
+          <span class="card-status live">Case Study</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a href="projects/equicare.html" class="project-card reveal-card">
+        <div class="card-tag">Systems Analysis · Requirements · Pay Equity</div>
+        <h3>EquiCare</h3>
+        <p>A requirements-driven HRIS update to detect and reduce pay disparities at a global
+          retailer — stakeholder analysis, compliance research, and detailed wireframes built
+          around a real pay-equity comparison tool.</p>
+        <div class="card-footer">
+          <span class="card-status live">Case Study</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <!-- <a href="projects/flickr-act.html" class="project-card reveal-card">
+        <div class="card-tag">Research & Strategy · Equity · Sponsor: Flickr Foundation</div>
+        <h3>The Flickr A.C.T.</h3>
+        <p>A capstone research project examining who gets represented in the Flickr Commons —
+          and a pivot from a verification framework to an in-person retreat model that lowers
+          the barrier to entry for underrepresented communities.</p>
+        <div class="card-footer">
+          <span class="card-status live">Case Study</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a> -->
+
+      <a href="projects/radian.html" class="project-card reveal-card">
+        <div class="card-tag">UI/UX Design · Design Systems · Client: Cascade Bicycle Club</div>
+        <h3>Radian Design System</h3>
+        <p>A complete design system and component library for a real nonprofit client —
+          personas, full visual language, and working prototypes for both desktop and mobile.</p>
+        <div class="card-footer">
+          <span class="card-status live">Case Study</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section reveal" id="contact">
+    <div class="contact-inner">
+      <div class="section-eyebrow">// let's connect</div>
+      <h2>Open to the right opportunity</h2>
+      <p>I'm actively building toward cloud and support engineering roles at companies doing interesting work. If that's
+        you — reach out.</p>
+      <div class="contact-links">
+        <a href="mailto:joshauvaa5@gmail.com" class="btn-primary">Email me</a>
+        <a href="https://linkedin.com/in/joshua-auvaa" target="_blank" class="btn-ghost">LinkedIn</a>
+        <a href="https://github.com/joshauvaa" target="_blank" class="btn-ghost">GitHub</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>© 2026 Joshua Auvaa</span>
+    <!-- <span>Built by hand in Tacoma, WA</span> -->
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+
+</html>

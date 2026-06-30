@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EquiCare | Josh</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">joshuauvaa</a>
+    <a href="../index.html#projects" class="nav-back">← back to projects</a>
+  </nav>
+
+  <div class="project-hero">
+    <div class="project-tag">Systems Analysis · Agile Backlog Management · Pay Equity</div>
+    <h1>EquiCare</h1>
+    <p class="lead">
+      A requirements-driven HRIS update designed to surface and reduce pay disparities across
+      a global retail organization — built through stakeholder analysis, compliance research,
+      and detailed wireframing rather than a tested live product.
+    </p>
+    <div class="project-meta">
+      <div class="meta-item">
+        <span class="meta-label">My Role</span>
+        <span class="meta-value">Requirements Analyst, UX Wireframing</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Team</span>
+        <span class="meta-value">4 people</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Context</span>
+        <span class="meta-value">IS & Product Management Course - 10 weeks</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Deliverables</span>
+        <span class="meta-value">Vision & Scope, NFRs, 30+ Epics/Stories, Wireframes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="callout">
+      <span class="callout-label">How to read this case study</span>
+      Unlike DawgRide, this project never reached a built, user-tested product — it's a
+      requirements and systems analysis exercise for a fictional retail organization
+      ("Global Retail United"). The strength here is in stakeholder analysis, a genuinely
+      disciplined Agile backlog (30+ epics/features/stories with real acceptance criteria),
+      and translating abstract requirements into concrete wireframes — not in iterative user
+      testing. I'm framing it honestly rather than dressing it up as something it isn't.
+    </div>
+
+    <!-- ============ PHASE 1: DISCOVER ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">1</div>
+      <h2>Discover</h2>
+      <span class="phase-divider-sub">Business Problem · Market · Goal</span>
+    </div>
+
+    <h2>The Business Problem</h2>
+    <p>
+      Global Retail United (GRU), a global retail organization with over 4,000 stores across
+      40+ countries, manages compensation through a manual, decentralized system — each
+      department uses its own methodology for setting and reviewing pay. That decentralization
+      creates real risk: pay disparities by gender or race can exist and go unnoticed, exposing
+      GRU to legal liability and reputational harm, while giving HR and legal teams no reliable
+      way to detect or report on the problem.
+    </p>
+    <p>
+      Our task was to design an update to GRU's existing HRIS (modeled on SAP SuccessFactors)
+      that could integrate the organization's other enterprise systems, surface pay disparities
+      with real-time data, and give HR and legal teams the tools to act on what they found.
+    </p>
+
+    <h2>The Market</h2>
+    <p class="gap-note">
+      The team did look at existing pay-equity and HRIS tooling as part of this project, but that
+      research is a couple of years old now and I no longer have the original notes or sources to
+      cite accurately. Rather than reconstruct it from memory and risk misattributing specific
+      tools or claims, I'm naming the gap directly — the research happened, but I can't stand
+      behind the specifics anymore.
+    </p>
+
+    <h2>The Goal</h2>
+    <p>
+      Give GRU's HR and legal teams real-time visibility into pay disparities across the
+      organization, replacing department-by-department guesswork with a single, centralized
+      source of truth — so disparities could be caught and addressed before they became legal or
+      reputational liabilities, rather than discovered after the fact.
+    </p>
+
+    <!-- ============ PHASE 2: DEFINE ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">2</div>
+      <h2>Define</h2>
+      <span class="phase-divider-sub">Stakeholders · Scope · Requirements</span>
+    </div>
+
+    <h2>Stakeholder Analysis</h2>
+    <p>
+      Six distinct stakeholder roles were identified, each with different needs and different
+      relationships to the pay equity problem — from the VP of HR needing visibility, to the
+      Chief Security Officer needing to protect the sensitive data the system would now centralize.
+    </p>
+    <table>
+      <tr>
+        <th>Stakeholder</th>
+        <th>Current Issue</th>
+        <th>Needed Benefit</th>
+      </tr>
+      <tr>
+        <td>VP of HR</td>
+        <td>Decentralized system, potential pay disparities</td>
+        <td>Centralized system, real-time reports, transparency</td>
+      </tr>
+      <tr>
+        <td>Legal Team (CLO &amp; HLC)</td>
+        <td>Potential discrimination liability</td>
+        <td>Objective compensation criteria, flexible reporting</td>
+      </tr>
+      <tr>
+        <td>CIO</td>
+        <td>Decentralized IT systems</td>
+        <td>Secure, scalable, integrated platform</td>
+      </tr>
+      <tr>
+        <td>HR Managers</td>
+        <td>Lack of transparency in compensation</td>
+        <td>Real-time data, automated processes</td>
+      </tr>
+      <tr>
+        <td>Payroll Manager</td>
+        <td>Ever-changing payroll law, no flexible reporting</td>
+        <td>Automated compliance-aware reporting</td>
+      </tr>
+    </table>
+
+    <h2>Scope</h2>
+    <p>
+      We deliberately scoped this as an <strong>upgrade</strong> to GRU's existing HRIS rather
+      than a full replacement — both to control cost (industry research suggested upgrades can
+      save over 25% versus full migration) and to avoid the risk of a ground-up system
+      migration at this scale. In scope: a centralized system, real-time reporting, objective
+      compensation criteria, performance management modules, and role-based security. Explicitly
+      out of scope: third-party integrations outside GRU, policy authorship, and employee
+      training program design.
+    </p>
+
+    <h2>Non-Functional Requirements</h2>
+    <p>
+      Because this system would handle highly sensitive compensation and demographic data at
+      scale, the non-functional requirements carried as much weight as the features themselves.
+    </p>
+    <table>
+      <tr>
+        <th>Category</th>
+        <th>Requirement</th>
+      </tr>
+      <tr>
+        <td>Scalability</td>
+        <td>Support up to 500,000 concurrent users; accommodate 15% annual growth</td>
+      </tr>
+      <tr>
+        <td>Availability</td>
+        <td>99.9% uptime ("three nines"); ≤8.77 hours planned downtime per year</td>
+      </tr>
+      <tr>
+        <td>Performance</td>
+        <td>&lt;2 second response time regardless of client or device</td>
+      </tr>
+      <tr>
+        <td>Interoperability</td>
+        <td>Built in Java; integrates with Microsoft Dynamics 365 and Empower via API; supports CSV import/export</td>
+      </tr>
+    </table>
+
+    <h2>Security &amp; Role-Based Access</h2>
+    <p>
+      Centralizing sensitive data (salaries, SSNs, demographic information) into one platform
+      meant access control couldn't be an afterthought. We mapped permissions explicitly by role
+      rather than relying on a generic "admin vs. user" split:
+    </p>
+    <table>
+      <tr>
+        <th>Permission</th>
+        <th>VP of HR</th>
+        <th>HR Manager</th>
+        <th>Payroll Mgr</th>
+        <th>Employee</th>
+      </tr>
+      <tr>
+        <td>View personal info (name, salary, SSN)</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>Own only</td>
+      </tr>
+      <tr>
+        <td>Edit payroll information</td>
+        <td>No</td>
+        <td>No</td>
+        <td>Yes</td>
+        <td>No</td>
+      </tr>
+      <tr>
+        <td>Approve employee requests</td>
+        <td>Yes</td>
+        <td>Yes</td>
+        <td>No</td>
+        <td>No</td>
+      </tr>
+    </table>
+    <p>
+      This table also directly shaped the wireframes below — the Pay screen, for example,
+      explicitly restricts payroll-sheet editing to Payroll Managers, with HR Managers granted
+      only limited edit permissions.
+    </p>
+
+    <!-- ============ PHASE 3: DEVELOP ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">3</div>
+      <h2>Develop</h2>
+      <span class="phase-divider-sub">Wireframes · Agile Backlog</span>
+    </div>
+
+    <h2>Wireframes</h2>
+    <p>
+      Three core screens were designed in Axure, each annotated with interaction logic rather
+      than left as static mockups. Click any image to view it full size.
+    </p>
+
+    <div class="carousel" id="wireframe-carousel">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="wireframe-carousel-track">
+          <div class="carousel-slide">
+            <img src="../assets/equicare/wireframe-home.png" alt="EquiCare HRIS home dashboard wireframe" onclick="openLightbox(this.src, this.alt)" />
+            <div class="carousel-slide-label">Home Dashboard</div>
+            <div class="carousel-slide-caption">Role-personalized announcements, awaiting actions, and upcoming dates with direct links to source tasks.</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../assets/equicare/wireframe-comparison-tool.png" alt="EquiCare pay comparison tool wireframe" onclick="openLightbox(this.src, this.alt)" />
+            <div class="carousel-slide-label">Comparison Tool</div>
+            <div class="carousel-slide-caption">The centerpiece of EquiCare. Built directly against User Story 19 ("As a manager, I want to compare similarly leveled employees and know the percentage difference in pay"). Surfaces an Employee Score, pay trend over time, and an explicit calculated disparity ("Employee 2 is making 30% less than the average manager").</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../assets/equicare/wireframe-pay.png" alt="EquiCare payroll management wireframe" onclick="openLightbox(this.src, this.alt)" />
+            <div class="carousel-slide-label">Pay Screen</div>
+            <div class="carousel-slide-caption">Role-gated payroll sheet with CSV import/export and a role-distribution breakdown, reflecting the access control table above directly in the UI.</div>
+          </div>
+        </div>
+        <button class="carousel-arrow prev" onclick="wireframeCarouselMove(-1)" aria-label="Previous">‹</button>
+        <button class="carousel-arrow next" onclick="wireframeCarouselMove(1)" aria-label="Next">›</button>
+      </div>
+      <div class="carousel-dots" id="wireframe-carousel-dots"></div>
+    </div>
+
+    <p>
+      The Comparison Tool is the strongest artifact in this project because it's the one place
+      where the abstract goal — "detect pay disparity" — becomes a concrete, usable interface.
+      Rather than just reporting raw numbers, it does the interpretive work for the user: calculating
+      and stating the percentage gap against role averages, so a manager doesn't have to do that
+      math themselves to notice a problem.
+    </p>
+
+    <h2>Agile Process &amp; Backlog</h2>
+    <p>
+      EquiCare's requirements were broken down using a standard three-tier Agile hierarchy:
+      <strong>Epics → Features → User Stories</strong>, all tracked in Azure Boards. This
+      wasn't loosely structured — the backlog held 30+ work items with full traceability from
+      high-level business goals down to testable acceptance criteria, and a portion of that
+      backlog was pulled into a defined Sprint 1.
+    </p>
+    <p class="gap-note">
+      To be precise about process maturity: this was run as a loosely sprinted workflow rather
+      than strict, by-the-book Scrum — there were no formal sprint review/retro ceremonies
+      tracked in the tool, and iteration dates weren't always set. The backlog structure and
+      story-writing discipline were real; the ceremony cadence was informal.
+    </p>
+
+    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--green-accent); margin-bottom: 0.75rem;">Backlog Hierarchy</h3>
+    <p>
+      Each Epic decomposed into Features, which then decomposed into individually testable User
+      Stories. For example:
+    </p>
+    <table>
+      <tr>
+        <th>Epic</th>
+        <th>Feature</th>
+        <th>User Story</th>
+      </tr>
+      <tr>
+        <td>Ensure Integration With Existing Systems</td>
+        <td>Offer Single Sign-On Support (SSO)</td>
+        <td>#5 — HR Manager: As an HR manager, I would like to be able to access different systems at the same time without having to log in multiple times.</td>
+      </tr>
+      <tr>
+        <td>Ensure Integration With Existing Systems</td>
+        <td>Develop APIs for system to communicate with other systems</td>
+        <td>#6 — Payroll Manager: As a payroll manager, I would like to integrate a payroll processing API to our HRIS to automate data transfer and reduce human error.</td>
+      </tr>
+      <tr>
+        <td>Document Employee Learning Performance</td>
+        <td>Improvement Recommendation</td>
+        <td>#11 - As an employee of GRU, I would like to see how far my progress is in completing the learning material, so I can know much I have left.</td>
+      </tr>
+    </table>
+
+    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--green-accent); margin-bottom: 0.75rem; margin-top: 2rem;">Sprint 1 — Selected User Stories</h3>
+    <p>
+      Nine user stories were pulled into Sprint 1. Each followed proper "As a [role], I want
+      [goal], so that [benefit]" framing with explicit, testable acceptance criteria —
+      not vague feature descriptions.
+    </p>
+    <table>
+      <tr>
+        <th>#</th>
+        <th>Story</th>
+        <th>Sample Acceptance Criteria</th>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>HR Manager — SSO: access multiple systems without repeated logins</td>
+        <td>Role-based access; intuitive design; no repeated credential entry</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>Payroll Manager — Integration: automate payroll API data transfer</td>
+        <td>Data transfer automated; error rate below human baseline; fully legally compliant</td>
+      </tr>
+      <tr>
+        <td>11</td>
+        <td>Employee — Completion Progress: track own learning progress</td>
+        <td>See assignments remaining; view finished assignments; get notified of new ones</td>
+      </tr>
+      <tr>
+        <td>12</td>
+        <td>HR Manager — Employee Progress: track employee learning company-wide</td>
+        <td>See assignments remaining and % completion per employee</td>
+      </tr>
+      <tr>
+        <td>47</td>
+        <td>Employee — Minimal System Downtime: reliable 24/7 access to pay/performance data</td>
+        <td>99.9% availability; downtime under 1.45 min/day; 5-hour advance notice; access denied gracefully during downtime</td>
+      </tr>
+      <tr>
+        <td>48</td>
+        <td>Legal Officer — Scheduled Downtime Alerts: advance notice to stay compliant</td>
+        <td>5-hr notice for maintenance, 24-hr for non-maintenance; support contact available during downtime</td>
+      </tr>
+    </table>
+    <p>
+      Story #47 is a good example of the backlog doing real work: it takes the abstract NFR
+      target from the Vision &amp; Scope doc ("three nines availability") and turns it into a
+      concrete, testable condition — under 1.45 minutes of downtime per day, with a defined
+      advance-notice window. Stories #11 and #12 are also a nice pair — the same underlying
+      feature (learning progress tracking) written twice, once from the employee's perspective
+      and once from the manager's, which is good practice for making sure a feature actually
+      serves both ends of a relationship rather than just one.
+    </p>
+
+
+    <!-- ============ PHASE 4: DELIVER ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">4</div>
+      <h2>Deliver</h2>
+      <span class="phase-divider-sub">Rollout · Closing</span>
+    </div>
+
+    <h2>Rollout &amp; Adoption</h2>
+    <p>
+      Because GRU employees were already familiar with most of the underlying systems being
+      integrated, we designed the rollout to minimize disruption rather than retrain from
+      scratch. In-app tutorials would target only the genuinely new functionality — performance
+      management modules for managers, compensation-criteria tools for HR, and new reporting
+      tools for the Payroll Manager — rather than re-teaching the whole system. The update would
+      also be announced well ahead of launch, with a support team and documentation in place at
+      go-live.
+    </p>
+
+    <h2>Closing</h2>
+    <p>
+      EquiCare never left the documentation and wireframing stage — there was no working
+      prototype to test with real users, and no opportunity to validate whether the Comparison
+      Tool's disparity calculations would actually change a manager's behavior in practice. That's
+      a real limitation, and I think it's more useful to name it directly than to imply otherwise.
+      What this project did teach me is how much of product work happens before a single screen
+      gets built — translating a vague organizational concern ("we might have pay disparities")
+      into specific user stories, measurable non-functional requirements, and a permission model
+      that actually reflects who should see what. That discipline is different from, but just as
+      necessary as, the iterative testing work I did on DawgRide.
+    </p>
+
+  </div>
+
+  <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+    <button class="lightbox-close" onclick="closeLightbox(event)" aria-label="Close">×</button>
+    <img id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    // Wireframe carousel
+    let wireframeCarouselIndex = 0;
+    const wireframeSlideCount = 3;
+
+    function wireframeRenderDots() {
+      const dotsContainer = document.getElementById('wireframe-carousel-dots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < wireframeSlideCount; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === wireframeCarouselIndex ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.onclick = () => { wireframeCarouselIndex = i; wireframeUpdateCarousel(); };
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function wireframeUpdateCarousel() {
+      const track = document.getElementById('wireframe-carousel-track');
+      track.style.transform = `translateX(-${wireframeCarouselIndex * 100}%)`;
+      wireframeRenderDots();
+    }
+
+    function wireframeCarouselMove(direction) {
+      wireframeCarouselIndex = (wireframeCarouselIndex + direction + wireframeSlideCount) % wireframeSlideCount;
+      wireframeUpdateCarousel();
+    }
+
+    wireframeRenderDots();
+
+    // Lightbox
+    function openLightbox(src, alt) {
+      const lightbox = document.getElementById('lightbox');
+      const img = document.getElementById('lightbox-img');
+      img.src = src;
+      img.alt = alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox(event) {
+      if (event.target.id === 'lightbox' || event.target.classList.contains('lightbox-close')) {
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        document.getElementById('lightbox').classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    });
+  </script>
+
+</body>
+</html>

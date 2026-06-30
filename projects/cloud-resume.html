@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud Resume Challenge | Josh</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">joshuauvaa</a>
+    <a href="../index.html#projects" class="nav-back">← back to projects</a>
+  </nav>
+
+  <div class="project-hero">
+    <div class="project-tag">AWS · Serverless · IaC · CI/CD</div>
+    <h1>Cloud Resume Challenge</h1>
+    <p class="lead">
+      A fully serverless, cloud-native resume site — built on AWS from static hosting
+      to API-driven visitor counter, deployed with Infrastructure as Code and automated
+      via CI/CD pipelines.
+    </p>
+    <div class="project-meta">
+      <div class="meta-item">
+        <span class="meta-label">Status</span>
+        <span class="meta-value">Live</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Stack</span>
+        <span class="meta-value">S3, CloudFront, Lambda, DynamoDB, Terraform, GitHub Actions</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Role</span>
+        <span class="meta-value">Solo</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-body">
+    <h2>What it is</h2>
+    <p>
+      The Cloud Resume Challenge is a well-known rite of passage for aspiring cloud engineers.
+      The challenge pushes you to build a real, production-style deployment — not a tutorial, not
+      a sandbox. Every service has to actually talk to each other, deployed to your own AWS account.
+    </p>
+    <p>
+      My implementation goes end-to-end: a hand-coded HTML/CSS resume hosted on S3, served through
+      CloudFront with HTTPS, backed by a Python Lambda function that reads and writes a visitor counter
+      to DynamoDB, all wired up via API Gateway.
+    </p>
+
+    <h2>Architecture</h2>
+    <div class="arch-diagram">
+Browser → CloudFront (CDN + HTTPS)
+              ↓
+           S3 Bucket (static files)
+              ↓
+    [Visitor Counter Button]
+              ↓
+       API Gateway (REST)
+              ↓
+       Lambda (Python)
+              ↓
+        DynamoDB (counter)
+    </div>
+
+    <h2>What I built</h2>
+    <ul>
+      <li>Static resume in HTML/CSS, no frameworks</li>
+      <li>S3 bucket configured for static website hosting with proper bucket policies</li>
+      <li>CloudFront distribution with HTTPS via ACM certificate and custom domain</li>
+      <li>Python Lambda function for GET/POST visitor count via DynamoDB</li>
+      <li>API Gateway wired to Lambda with CORS configured correctly</li>
+      <li>Terraform modules for all infrastructure — no clicking through the console</li>
+      <li>GitHub Actions pipeline: push to main → tests → Terraform plan/apply → deploy</li>
+    </ul>
+
+    <h2>What I learned</h2>
+    <p>
+      The Cloud Resume Challenge is deceptively hard. Getting each AWS service to work in isolation
+      is one thing. Getting them all to talk to each other — with correct IAM permissions, CORS headers,
+      and Terraform state — is another level.
+    </p>
+    <p>
+      The biggest unlocks were understanding IAM least-privilege in practice, how CloudFront cache
+      invalidation works, and how to structure Terraform so it's actually maintainable.
+    </p>
+
+    <a href="#" class="btn-primary">View Live Site</a>
+    <a href="https://github.com/joshauvaa/cloud-resume-challenge" target="_blank" class="btn-ghost">GitHub →</a>
+  </div>
+</body>
+</html>

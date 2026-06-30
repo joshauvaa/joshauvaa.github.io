@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DawgRide | Josh</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">joshuauvaa</a>
+    <a href="../index.html#projects" class="nav-back">← back to projects</a>
+  </nav>
+
+  <div class="project-hero">
+    <div class="project-tag">Product Management · UX Research · MVP Design</div>
+    <h1>DawgRide</h1>
+    <p class="lead">
+      A companion mobile app that fixes the trust and usability gaps in UW's late-night
+      shuttle services — built on top of Husky NightRide and SafeTrip, not as a replacement
+      for them.
+    </p>
+    <div class="project-meta">
+      <div class="meta-item">
+        <span class="meta-label">My Role</span>
+        <span class="meta-value">PM/Frontend Developer</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Team</span>
+        <span class="meta-value">3 Frontend developers
+          , 2 Backend Developers</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Context</span>
+        <span class="meta-value">Cooperative Software Development Course - 10 weeks</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Tools</span>
+        <span class="meta-value">JavaScript, Bootstrap, OpenStreetMap API</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <!-- ============ PHASE 1: DISCOVER ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">1</div>
+      <h2>Discover</h2>
+      <span class="phase-divider-sub">Context · Hypothesis · Market · Audience · Insights</span>
+    </div>
+
+    <h2>Context</h2>
+    <p>
+      UW's late-night transportation safety net — Husky NightRide and SafeTrip — already exists,
+      but students don't trust or enjoy using it. Our team set out to design a companion app,
+      DawgRide, that sits on top of these existing services and fixes the experience layer:
+      visibility, trust, and ease of use — without needing to rebuild UW's underlying transit
+      infrastructure.
+    </p>
+    <p>
+      This wasn't a problem we invented for a class project. Student frustration with NightRide
+      is publicly documented in UW's own student newspaper, which gave us a real foundation to
+      design against rather than guessing at pain points.
+    </p>
+
+    <h2>Hypothesis</h2>
+    <div class="quote-block">
+      If we give UW students accurate, real-time visibility into NightRide and SafeTrip — instead
+      of relying on a fixed schedule and an outdated standalone app — then they will feel safer
+      and more confident planning late-night commutes, increasing trust in and usage of these
+      existing services.
+    </div>
+
+    <h2>The Market</h2>
+    <p>
+      We didn't run a formal competitive teardown against other campus safety apps or commercial
+      rideshare products (Uber, Lyft, other university shuttle tools) as part of this project.
+    </p>
+    <div class="callout">
+      <span class="callout-label">Gap — not in original deck</span>
+      The template asks for competitor and industry trend research here. If your team looked at
+      any other campus safety apps, transit trackers, or even informally compared DawgRide's
+      approach to something like Uber's live tracking UX, that belongs here. Otherwise, it's
+      honest to state this wasn't part of the project's scope — coursework timelines don't always
+      allow for full market research, and that's a fair limitation to name rather than invent
+      around.
+    </div>
+
+    <h2>The Audience</h2>
+    <p>
+      Our target audience is UW students and staff who use Husky NightRide and SafeTrip,
+      particularly those who are out on campus late — studying, working, or commuting home after
+      dark. We narrowed this further into two personas to ground our design decisions in specific,
+      different needs rather than a single generic "student" user.
+    </p>
+
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-name">George</div>
+        <div class="persona-meta">18 · Informatics Student · Maple Hall</div>
+        <div class="persona-section-label">Behaviors</div>
+        <ul>
+          <li>Night owl — studies and works out late on campus</li>
+          <li>Doesn't like walking long distances</li>
+        </ul>
+        <div class="persona-section-label">Needs</div>
+        <ul>
+          <li>Wants an accurate ETA or live tracking</li>
+          <li>Wants to know his place in the queue</li>
+          <li>Needs a clear understanding of routes and pickup zones</li>
+        </ul>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-name">Devin</div>
+        <div class="persona-meta">21 · MBA Student · The Accolade</div>
+        <div class="persona-section-label">Behaviors</div>
+        <ul>
+          <li>Stays late at Paccar and Suzzallo finishing work</li>
+          <li>Doesn't like feeling unsafe crossing the Ave at night</li>
+        </ul>
+        <div class="persona-section-label">Needs</div>
+        <ul>
+          <li>Wants to feel safe traveling between zones</li>
+          <li>Wants ETA estimates so she isn't waiting in the dark</li>
+          <li>Wants info accessible without digging through the website</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>User Insights</h2>
+    <p>
+      Our initial pain points were grounded in a real, published source rather than assumption —
+      <em>The Daily</em>, UW's student newspaper, documented specific complaints about NightRide
+      that mapped directly onto what we designed against:
+    </p>
+    <ul>
+      <li><strong>Lateness</strong> — NightRide shuttles frequently deviate from their fixed route, making arrival times unpredictable.</li>
+      <li><strong>Unintuitive mobile app</strong> — The existing tool, RideSystems, has an outdated interface that makes basic tasks harder than they should be.</li>
+      <li><strong>Low discoverability</strong> — Information about NightRide and SafeTrip lives only on the UW website, spread across multiple nested pages, instead of being available in the moment a student actually needs it.</li>
+    </ul>
+    <p class="gap-note">
+      The template also calls for direct user quotes or survey stats at this stage. Our deck
+      doesn't capture verbatim quotes from this early discovery phase — our actual interview data
+      comes later, during user testing of the prototype (see Develop phase).
+    </p>
+
+    <!-- ============ PHASE 2: DEFINE ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">2</div>
+      <h2>Define</h2>
+      <span class="phase-divider-sub">User Journey · Takeaways · Problem · Goal</span>
+    </div>
+
+    <h2>User Journey</h2>
+    <p>
+      We mapped the current-state experience for each persona — tracing every step they'd take
+      trying to use NightRide or SafeTrip today, with their expectations and frustrations
+      annotated along the way. Both journeys surface the same core failure: the information layer
+      breaks down right when users need it most.
+    </p>
+
+    <div class="carousel" id="uj-carousel">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="uj-carousel-track">
+          <div class="carousel-slide">
+            <img src="../assets/dawgride/george-uj.png" class="light-bg" alt="George's user journey map — trying NightRide for the first time" />
+            <div class="carousel-slide-label">George's Journey — NightRide</div>
+            <div class="carousel-slide-caption">George plans his first NightRide trip around closing time — only to wait 10+ minutes past the scheduled arrival with no way to track the shuttle, ultimately ending up far from his dorm.</div>
+          </div>
+          <div class="carousel-slide">
+            <img src="../assets/dawgride/devin-uj.png" class="light-bg" alt="Devin's user journey map — using SafeTrip late at night" />
+            <div class="carousel-slide-label">Devin's Journey — SafeTrip</div>
+            <div class="carousel-slide-caption">Devin uses SafeTrip after a late study session — navigating a phone call, waiting outside alone for 12 minutes with no tracking, and resolving to ask for an ETA next time.</div>
+          </div>
+        </div>
+        <button class="carousel-arrow prev" onclick="ujCarouselMove(-1)" aria-label="Previous">‹</button>
+        <button class="carousel-arrow next" onclick="ujCarouselMove(1)" aria-label="Next">›</button>
+      </div>
+      <div class="carousel-dots" id="uj-carousel-dots"></div>
+    </div>
+
+    <h2>Big Takeaways</h2>
+    <p>
+      Combining our user insights, the core takeaway was that NightRide and SafeTrip's problems
+      aren't really about the underlying transit service — the shuttles exist and the safety
+      program exists. The failure is entirely in the information layer: students can't see what's
+      happening, can't trust an ETA, and can't easily find how to use the services in the first
+      place. That reframing is what shaped our solution — we weren't trying to fix transit
+      logistics, we were trying to fix visibility and trust.
+    </p>
+
+    <h2>The Problem</h2>
+    <div class="quote-block">
+      UW students experience uncertainty and frustration when using Husky NightRide and SafeTrip
+      at night. The lack of accurate, real-time updates on ride availability and queue position
+      disrupts their ability to plan safe, efficient commutes.
+    </div>
+
+    <h2>The Goal</h2>
+    <p>
+      Success means students feel confident and informed enough to actually rely on NightRide and
+      SafeTrip late at night, rather than avoiding them or defaulting to walking alone. From the
+      user's perspective, that looks like knowing how long a wait will be and where to go.
+      From a program standpoint, it looks like increased trust in — and usage of — services UW has
+      already built and funded.
+    </p>
+    <p class="gap-note">
+      We didn't define a specific quantitative success target (e.g. "X% reduction in self-reported
+      wait anxiety" or "X% increase in NightRide usage") as part of this coursework project — see
+      Measuring Success below, where we define what we'd track if this were a real launch.
+    </p>
+
+    <h2>Positioning Statement</h2>
+    <div class="quote-block">
+      For UW students and staff who use the NightRide and SafeTrip services, DawgRide is a
+      mobile app that helps students plan their commutes better. Unlike RideSystems, our product
+      gives students accurate, real-time updates that help them feel safer commuting from campus
+      at night.
+    </div>
+
+    <!-- ============ PHASE 3: DEVELOP ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">3</div>
+      <h2>Develop</h2>
+      <span class="phase-divider-sub">Prioritization · Solutions · Testing · Final Design</span>
+    </div>
+
+    <h2>Feature Prioritization & MVP Definition</h2>
+    <p>
+      We didn't run a formal RICE score against every feature idea during this project — our
+      prioritization was driven directly by user testing signal, which led to a real pivot (see
+      below). For the purpose of this case study, here's a RICE-style view of our core features,
+      scored retroactively based on what we now know from testing:
+    </p>
+
+    <table class="rice-table">
+      <tr>
+        <th>Feature (User Story)</th>
+        <th>Reach</th>
+        <th>Impact</th>
+        <th>Effort</th>
+        <th>Confidence</th>
+        <th>Total</th>
+      </tr>
+      <tr>
+        <td>"As a student waiting at night, I want to see real-time shuttle location so that I know how long until pickup."</td>
+        <td>9</td>
+        <td>9</td>
+        <td>8</td>
+        <td>6</td>
+        <td class="rice-total">~7.6</td>
+      </tr>
+      <tr>
+        <td>"As a student new to NightRide, I want a simple, guided way to request a ride so that I'm not confused by the existing app."</td>
+        <td>8</td>
+        <td>8</td>
+        <td>4</td>
+        <td>9</td>
+        <td class="rice-total">~14.4</td>
+      </tr>
+      <tr>
+        <td>"As a student walking alone, I want to report or check unsafe areas so that I can avoid them."</td>
+        <td>6</td>
+        <td>7</td>
+        <td>5</td>
+        <td>7</td>
+        <td class="rice-total">~8.4</td>
+      </tr>
+      <tr>
+        <td>"As a student deciding whether to wait, I want to see shuttle occupancy so that I know what to expect."</td>
+        <td>7</td>
+        <td>6</td>
+        <td>5</td>
+        <td>6</td>
+        <td class="rice-total">~8.4</td>
+      </tr>
+    </table>
+    <p class="gap-note">
+      Scores above (1–10 scale, Total = Reach × Impact × Confidence ÷ Effort, simplified) are
+      reconstructed for this case study to illustrate prioritization logic — they weren't
+      calculated live during the original project. What <em>is</em> real: usability and onboarding
+      ended up mattering more than live tracking once we tested with actual users, which the
+      scores above reflect.
+    </p>
+
+    <h2>Solutions Explored</h2>
+    <p>
+      Our first instinct was that live GPS tracking — knowing exactly where the shuttle was in
+      real time — would be the highest-value feature, since "where is my ride" was the loudest
+      pain point in our research. We spent roughly two weeks pursuing this, including evaluating
+      third-party APIs like OneBusAway, before testing it with real users.
+    </p>
+
+    <h2>User Testing & Feedback</h2>
+    <p>We ran 7 user tests across two iterations of our prototype.</p>
+
+    <div class="process-step">
+      <div class="process-step-num">1</div>
+      <div class="process-step-content">
+        <h4>Iteration 1 — Figma Prototype</h4>
+        <p>
+          As PM, I designed the first clickable Figma prototype myself — every screen, flow, and
+          interaction state — rather than dividing it across the team. With attendance starting to
+          slip heading into this phase, a single, complete prototype meant the dev team always had
+          one unambiguous source of truth to build against, regardless of who was available in a
+          given week. This was the version we put in front of our first round of test participants
+          and the direct basis for the React build that followed.
+        </p>
+        <div class="carousel" id="wireframe-carousel">
+          <div class="carousel-viewport">
+            <div class="carousel-track" id="wireframe-carousel-track">
+              <div class="carousel-slide">
+                <img src="../assets/dawgride/loading.png" alt="DawgRide onboarding screens — splash, login, sign up, and loading" />
+                <div class="carousel-slide-label">Onboarding</div>
+                <div class="carousel-slide-caption">Splash screen, login, sign-up, and loading state — the full entry flow using UW NetID credentials.</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/dawgride/nightride.png" alt="NightRide tab — map view, stop selection, route search, and ETA display" />
+                <div class="carousel-slide-label">NightRide</div>
+                <div class="carousel-slide-caption">Interactive map with live shuttle positions, stop selector, route search, and an ETA + occupancy card — the core of what was missing from the existing RideSystems app.</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/dawgride/safetrip.png" alt="SafeTrip tab — service area map, student ID verification, queue join flow, and saved locations" />
+                <div class="carousel-slide-label">SafeTrip</div>
+                <div class="carousel-slide-caption">Service area map, student ID verification, simplified queue-join flow with estimated wait time, and saved drop-off locations — replacing the existing phone-call-only process.</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/dawgride/safety-feature.png" alt="Safety tab — report flow with ID verification, incident type selection, detail entry, and map with submitted reports" />
+                <div class="carousel-slide-label">Safety Reporting</div>
+                <div class="carousel-slide-caption">Full report submission flow — ID verification, incident type (Cops Nearby / Unsafe Area), detail entry, and a live map showing submitted reports from other users.</div>
+              </div>
+              <div class="carousel-slide">
+                <img src="../assets/dawgride/faq.png" alt="FAQ / Info tab — accordion-style NightRide and SafeTrip questions with expandable answers" />
+                <div class="carousel-slide-label">FAQ & Info</div>
+                <div class="carousel-slide-caption">Accordion FAQ covering both NightRide and SafeTrip — surfacing the service information that previously required digging through multiple UW website pages.</div>
+              </div>
+            </div>
+            <button class="carousel-arrow prev" onclick="wireframeCarouselMove(-1)" aria-label="Previous">‹</button>
+            <button class="carousel-arrow next" onclick="wireframeCarouselMove(1)" aria-label="Next">›</button>
+          </div>
+          <div class="carousel-dots" id="wireframe-carousel-dots"></div>
+        </div>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-num">2</div>
+      <div class="process-step-content">
+        <h4>Iteration 2</h4>
+        <p>
+          Users needed a clearer way to undo actions (backtrack on a form); a tutorial/key for
+          the map was needed to explain symbols and usage; the NightRide schedule needed to live
+          inside the app, not just be referenced.
+        </p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-num">3</div>
+      <div class="process-step-content">
+        <h4>Iteration 3</h4>
+        <p>
+          The Safety tab needed to visibly update with newly submitted reports; color contrast on
+          tabs and informational text needed improvement; error messages were needed for
+          incorrect form inputs.
+        </p>
+      </div>
+    </div>
+
+    <p>
+      The most important insight from testing: participants were getting stuck on fundamental
+      usability issues — filtering, navigation, knowing how to back out of a flow — well before
+      live tracking would have even mattered to them. That's what triggered our pivot.
+    </p>
+
+    <div class="process-step">
+      <div class="process-step-num">→</div>
+      <div class="process-step-content">
+        <h4>The Pivot</h4>
+        <p>
+          We deprioritized live GPS tracking and reallocated that time toward fixing core
+          usability — making filtering more intuitive and fixing the ability to cleanly cancel out
+          of the NightRide section. A flashier feature isn't worth shipping if users are still
+          getting stuck on the basics underneath it.
+        </p>
+      </div>
+    </div>
+
+    <h2>Keeping the Team on Track</h2>
+    <p>
+      Attendance held up well for the first three weeks, then got inconsistent for several
+      members through weeks four to seven — the exact stretch where we needed to move from
+      concept to a working, testable build. Some of that was unavoidable; a lot of it was
+      last-minute. Either way, the deadline didn't move, so the plan had to absorb it.
+    </p>
+    <p>
+      As PM, I managed this on three fronts at once: I reassigned tasks from members who couldn't
+      reliably show up to teammates who could, so work in flight didn't stall on any one person's
+      schedule. Where reassignment wasn't enough, I picked up pieces myself — including owning the
+      Figma prototype end-to-end rather than splitting it across a team whose availability I
+      couldn't predict week to week. And where neither of those covered the gap, I cut scope: the
+      live-tracking pivot above wasn't only a response to user testing data, it was also a
+      practical call about what we could still deliver well with the team capacity we actually had,
+      versus what we'd originally hoped to build.
+    </p>
+    <p>
+      The lesson that stuck with me: protecting a deadline with an inconsistent team isn't one
+      decision, it's a running judgment call — knowing when to redistribute, when to absorb the
+      work yourself, and when to cut scope instead of quietly letting quality slip.
+    </p>
+
+    <h2>Final Solution</h2>
+    <p>
+      DawgRide enhances the safety and convenience of late-night commutes for the UW community
+      by building on top of the existing NightRide and SafeTrip services, rather than replacing
+      them.
+    </p>
+    <ul>
+      <li><strong>Interactive Map</strong> — shuttle routes and stops, for better trip planning</li>
+      <li><strong>Real-Time Tracking</strong> — live shuttle locations for accurate arrival estimates</li>
+      <li><strong>Shuttle Occupancy</strong> — visibility into how full a NightRide shuttle is before it arrives</li>
+      <li><strong>SafeTrip Queue</strong> — a simplified flow for requesting a SafeTrip ride</li>
+      <li><strong>Safety Map</strong> — lets users report and review suspicious activity on campus</li>
+      <li><strong>Info/FAQ Section</strong> — explains how NightRide, SafeTrip, and DawgRide work together</li>
+    </ul>
+
+    <p>
+      <span class="role-tag">JavaScript</span>
+      <span class="role-tag">HTML / CSS</span>
+      <span class="role-tag">Bootstrap</span>
+      <span class="role-tag">OpenStreetMap API</span>
+      <span class="role-tag">RESTful backend</span>
+    </p>
+    <p><strong>Key design decision:</strong> we chose an event-driven architecture over a monolithic one.</p>
+    <table>
+      <tr>
+        <th>Pros</th>
+        <th>Cons</th>
+      </tr>
+      <tr>
+        <td>Scalable</td>
+        <td>More complex to implement</td>
+      </tr>
+      <tr>
+        <td>Features work independently</td>
+        <td>Requires solid understanding of event handling</td>
+      </tr>
+      <tr>
+        <td>Easier long-term maintenance</td>
+        <td>Harder to debug</td>
+      </tr>
+    </table>
+
+    <!-- ============ PHASE 4: DELIVER ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">4</div>
+      <h2>Deliver</h2>
+      <span class="phase-divider-sub">Launch · Metrics · Future · Closing</span>
+    </div>
+
+    <h2>Launch & GTM Strategy</h2>
+    <div class="callout">
+      <span class="callout-label">Gap — not in original deck</span>
+      As a coursework MVP, DawgRide was never actually launched to real users at scale, so we
+      didn't define a formal go-to-market or rollout plan (A/B testing, phased release, etc.).
+      If this were carried forward as a real UW initiative, the natural approach — mirroring how
+      Anthony Saltarelli's PayPal case study handled this — would be a small phased rollout:
+      pilot with a single residence hall or a specific NightRide route first, gather usage data,
+      then expand campus-wide.
+    </div>
+
+    <h2>Measuring Success</h2>
+    <p>
+      We didn't define formal North Star or leading/lagging metrics during the original coursework
+      project. Below is what we'd define if DawgRide moved toward a real launch:
+    </p>
+
+    <div class="process-step">
+      <div class="process-step-num">★</div>
+      <div class="process-step-content">
+        <h4>North Star Metric</h4>
+        <p>Weekly active NightRide/SafeTrip requests initiated through DawgRide.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-num">↑</div>
+      <div class="process-step-content">
+        <h4>Leading Indicators</h4>
+        <p>App opens before 11pm; search/filter usage rate; Safety Map report submissions.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-num">⏱</div>
+      <div class="process-step-content">
+        <h4>Lagging Indicators</h4>
+        <p>Week-over-week growth in unique riders using DawgRide to request NightRide or SafeTrip; reduction in support/complaint tickets about wait uncertainty.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-num">⚠</div>
+      <div class="process-step-content">
+        <h4>Counter Metrics</h4>
+        <p>Drop-off rate between opening the app and completing a request (would signal the new flow adds friction rather than removing it); false/spam Safety Map reports.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-step-num">◎</div>
+      <div class="process-step-content">
+        <h4>Monitoring</h4>
+        <p>Would require coordination with UW Transportation Services and UW Police (who operate SafeTrip) to validate report accuracy and catch service-level issues early.</p>
+      </div>
+    </div>
+
+    <h2>Future Iterations</h2>
+    <ul>
+      <li>A client-side interface for NightRide/SafeTrip drivers to report their own vehicle locations — the real dependency live tracking would need</li>
+      <li>A mapping API integration for in-app turn-by-turn directions</li>
+      <li>A formal queue system for SafeTrip requests</li>
+      <li>48-hour storage and more comprehensive identification handling for safety reports</li>
+      <li>User verification through UW NetID</li>
+      <li>Real vehicle integration into the live application</li>
+    </ul>
+
+    <h2>Closing</h2>
+    <p>
+      We started with a clear, well-documented problem: UW students don't trust or enjoy using
+      NightRide and SafeTrip, not because the services are bad, but because the information layer
+      around them is broken. We built DawgRide to fix that layer. Along the way, the most
+      important lesson wasn't technical — it was that our instinct about what mattered most (live
+      tracking) didn't match what users actually struggled with (basic usability), and we had to
+      be willing to redirect real effort, mid-project, once the data told us otherwise.
+    </p>
+    <p>
+      Leading that pivot meant more than reading the test results correctly. It meant keeping a
+      team with uneven availability aligned and accountable under a real deadline — deciding week
+      to week whether to redistribute work, absorb it myself, or cut scope outright. That
+      experience taught me that prioritization, as a PM, isn't a single decision made once at
+      kickoff. It's a discipline you keep exercising as conditions change underneath you.
+    </p>
+
+    <a href="https://info442c-win2024.github.io/dawg-ride/" target="_blank" class="btn-primary">View Live Demo</a>
+    <a href="https://github.com/INFO442C-WIN2024/dawg-ride" target="_blank" class="btn-ghost">GitHub →</a>
+
+  </div>
+  <script>
+    // User Journey carousel
+    let ujCarouselIndex = 0;
+    const ujSlideCount = 2;
+
+    function ujRenderDots() {
+      const dotsContainer = document.getElementById('uj-carousel-dots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < ujSlideCount; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === ujCarouselIndex ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.onclick = () => { ujCarouselIndex = i; ujUpdateCarousel(); };
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function ujUpdateCarousel() {
+      const track = document.getElementById('uj-carousel-track');
+      track.style.transform = `translateX(-${ujCarouselIndex * 100}%)`;
+      ujRenderDots();
+    }
+
+    function ujCarouselMove(direction) {
+      ujCarouselIndex = (ujCarouselIndex + direction + ujSlideCount) % ujSlideCount;
+      ujUpdateCarousel();
+    }
+
+    ujRenderDots();
+
+    // Wireframe carousel
+    let wireframeCarouselIndex = 0;
+    const wireframeSlideCount = 5;
+
+    function wireframeRenderDots() {
+      const dotsContainer = document.getElementById('wireframe-carousel-dots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < wireframeSlideCount; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === wireframeCarouselIndex ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.onclick = () => { wireframeCarouselIndex = i; wireframeUpdateCarousel(); };
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function wireframeUpdateCarousel() {
+      const track = document.getElementById('wireframe-carousel-track');
+      track.style.transform = `translateX(-${wireframeCarouselIndex * 100}%)`;
+      wireframeRenderDots();
+    }
+
+    function wireframeCarouselMove(direction) {
+      wireframeCarouselIndex = (wireframeCarouselIndex + direction + wireframeSlideCount) % wireframeSlideCount;
+      wireframeUpdateCarousel();
+    }
+
+    wireframeRenderDots();
+  </script>
+
+</body>
+</html>

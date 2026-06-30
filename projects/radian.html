@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Radian Design System | Josh</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
+  <link rel="stylesheet" href="project.css" />
+</head>
+<body>
+  <nav class="nav">
+    <a href="../index.html" class="nav-logo">joshuauvaa</a>
+    <a href="../index.html#projects" class="nav-back">← back to projects</a>
+  </nav>
+
+  <div class="project-hero">
+    <div class="project-tag">UI/UX Design · Design Systems · Client: Cascade Bicycle Club</div>
+    <h1>Radian Design System</h1>
+    <p class="lead">
+      A full design system and component library built for Cascade Bicycle Club — a real
+      nonprofit cycling advocacy organization — including personas, a complete visual language,
+      and working prototypes for both desktop and mobile.
+    </p>
+    <div class="project-meta">
+      <div class="meta-item">
+        <span class="meta-label">My Role</span>
+        <span class="meta-value">UX Research & UI Design</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Team</span>
+        <span class="meta-value">4 Designers</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Context</span>
+        <span class="meta-value">Design Systems for Digital Experiences Course - 10 weeks</span>
+      </div>
+      <div class="meta-item">
+        <span class="meta-label">Deliverables</span>
+        <span class="meta-value">Personas, Design System, Desktop & Mobile Prototypes</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="project-body">
+
+    <div class="callout">
+      <span class="callout-label">How to read this case study</span>
+      This was a UI/UX-focused project for a real nonprofit client, built three years ago. The
+      original Figma prototypes are no longer accessible (school-hosted file, since expired), so
+      this case study leans on the design system documentation itself — which is detailed enough
+      to carry it — rather than live prototype screenshots.
+    </div>
+
+    <!-- ============ PHASE 1: DISCOVER ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">1</div>
+      <h2>Discover</h2>
+      <span class="phase-divider-sub">Context · Audience · Insights</span>
+    </div>
+
+    <h2>Context</h2>
+    <p>
+      Cascade Bicycle Club is a real Seattle-based nonprofit focused on cycling advocacy,
+      education, and community events across the Pacific Northwest. Our team was tasked with
+      designing <strong>Radian</strong> — a complete design system and component library for
+      Cascade's digital presence, built around four guiding principles: Intuitive, Unified,
+      Universal, and Iterate. Those principles weren't just a slide — they showed up later as
+      real tradeoffs, like choosing explicit text labels over icon-only shorthand specifically
+      because "Universal" meant the system had to work for someone with zero cycling background,
+      not just confident club veterans.
+    </p>
+    <p>
+      The need for a system wasn't abstract — it came directly out of an interface audit our team
+      ran on Cascade's existing site. Below are the actual notes from that audit, three+ years
+      old at this point but still the clearest evidence of the problem Radian was built to solve.
+    </p>
+
+    <div class="wireframe-block">
+      <img src="../assets/radian/interface-audit.png" alt="Interface audit of Cascade Bicycle Club's existing site — sticky notes flagging inconsistent typography and color hierarchy, alongside screenshots of inconsistent buttons, menus, and cards across the site" />
+      <div class="wireframe-caption">Our team's interface audit of Cascade's existing site, with teammate notes calling out inconsistent typography and an overloaded color hierarchy.</div>
+    </div>
+
+    <p>
+      Two notes from that audit drove most of what came next: <strong>"Different Typography"</strong>
+      — type treatments varied inconsistently across pages with no shared scale — and
+      <strong>"Color hierarchy — currently too many primary, secondary colors."</strong> The
+      screenshots make both visible: buttons alone ranged from a purple "BECOME A MEMBER" to an
+      orange pill "DONATE NOW" to mismatched blue/green combinations, with no consistent shape,
+      sizing, or hierarchy between primary and secondary actions on the same page.
+    </p>
+    <p class="gap-note">
+      We didn't formally state a hypothesis (an if/then prediction) or run a competitive teardown
+      against other nonprofit or cycling-org sites as part of this project — the audit above was
+      our primary research input, and it was specific enough to scope the work directly.
+    </p>
+
+    <h2>The Audience</h2>
+    <p>
+      We didn't conduct direct interviews with Cascade's actual membership. Tom and June were
+      built through team synthesis — combining the audit findings, the client brief, and our own
+      research into what a nonprofit cycling org's user base typically looks like — rather than
+      from primary interviews. That's a real limitation worth naming directly rather than implying
+      otherwise.
+    </p>
+
+    <h2>User Insights — Personas</h2>
+    <p>
+      We built two personas representing genuinely different relationships to cycling and to
+      Cascade's platform — and the gap between them is what actually drove design decisions, not
+      just a slide to check a UX-process box.
+    </p>
+
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-name">Tom</div>
+        <div class="persona-meta">40 · 2nd-year Cascade member · Confident rider</div>
+        <div class="persona-section-label">Pain Points</div>
+        <ul>
+          <li>Outdated/worn-out biking equipment</li>
+          <li>Hard to assist new members navigating the platform</li>
+        </ul>
+        <div class="persona-section-label">Needs</div>
+        <ul>
+          <li>An easy-to-navigate platform so he can help others find events and resources</li>
+        </ul>
+      </div>
+
+      <div class="persona-card">
+        <div class="persona-name">June</div>
+        <div class="persona-meta">35 · New to cycling · Mother of two, new to the PNW</div>
+        <div class="persona-section-label">Pain Points</div>
+        <ul>
+          <li>No experienced background in cycling</li>
+          <li>Safety concerns; no idea where to find family-friendly information</li>
+        </ul>
+        <div class="persona-section-label">Needs</div>
+        <ul>
+          <li>To get to events efficiently and safely, with time for her kids</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      Tom didn't need the system explained to him — he needed it to be simple enough that
+      <em>he</em> could explain it to someone else in thirty seconds at a group ride. June needed
+      the opposite: enough built-in clarity that she never had to ask. That tension — design for
+      the person teaching it, design for the person who's never seen it before — is why sign-in
+      and account creation ended up as fully labeled, linear forms instead of icon-driven
+      shorthand. A confident user like Tom barely notices the extra label text; for June, it's
+      the difference between finishing the form and giving up halfway through.
+    </p>
+
+    <!-- ============ PHASE 2: DEFINE ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">2</div>
+      <h2>Define</h2>
+      <span class="phase-divider-sub">User Journey · Takeaways · Problem · Goal</span>
+    </div>
+
+    <h2>User Journey</h2>
+    <p>
+      The clearest "journey" we mapped wasn't a single user's step-by-step flow — it was the
+      inconsistency a user would hit at every step of using Cascade's site. The audit screenshots
+      above show this directly: a visitor exploring the menu tabs sees one visual language, lands
+      on an activity card with a completely different card style and typography, then hits a
+      "Become a Member" or "Donate" button rendered in a third, unrelated visual style depending
+      on which page they're on. Nothing about the experience told them they were still on the same
+      site, let alone using the same product.
+    </p>
+    <p class="gap-note">
+      We didn't build a formal step-by-step journey map for a specific persona's task (e.g. "June
+      tries to find a beginner-friendly group ride") — the inconsistency itself, documented across
+      the whole site, was the journey problem we scoped against.
+    </p>
+
+    <h2>Big Takeaways</h2>
+    <p>
+      Combining the audit and the persona work, the takeaway was that Cascade's site didn't have a
+      design problem in any one place — it had a <em>systems</em> problem. Individual pages and
+      components weren't badly designed in isolation; they just didn't belong to the same family.
+      That reframing is what made a design system the right deliverable, rather than a redesign of
+      any single page.
+    </p>
+
+    <h2>The Problem</h2>
+    <div class="quote-block">
+      Cascade Bicycle Club's digital presence lacks a unified visual language. Typography, color,
+      and component styles vary inconsistently across pages, making the experience feel
+      fragmented — and making it harder for both confident members like Tom and newcomers like
+      June to trust and navigate the platform.
+    </div>
+
+    <h2>The Goal</h2>
+    <p>
+      Success meant a single, documented system — colors, type, components, and patterns — that
+      any page on Cascade's site could be built from, so a visitor moving from the homepage to an
+      event page to a sign-up form would experience one consistent product instead of several
+      loosely related ones. For Tom, that meant a system simple enough to explain to someone else
+      in passing. For June, it meant enough built-in clarity that she'd never have to ask.
+    </p>
+
+    <!-- ============ PHASE 3: DEVELOP ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">3</div>
+      <h2>Develop</h2>
+      <span class="phase-divider-sub">Prioritization · Solutions · Testing · Final System</span>
+    </div>
+
+    <h2>Prioritization</h2>
+    <p>
+      We didn't run a formal scoring framework (RICE or similar) against every possible component.
+      Prioritization was informal but deliberate — the team discussed which pieces had to exist
+      for the system to be usable at all (colors, type, buttons, forms) versus which could come
+      later as the system matured (deeper pattern libraries, edge-case components). The audit
+      findings made that an easy call: type and color hierarchy were the most visibly broken
+      pieces of Cascade's existing site, so they came first.
+    </p>
+
+    <h2>Solutions Explored</h2>
+    <p>
+      We converged on one primary direction early — built around Cascade's existing brand green
+      rather than introducing a new palette — and iterated within it rather than exploring several
+      fully distinct system directions. Most of the iteration happened at the component level: how
+      many button variants were actually necessary, how explicit form labels needed to be for a
+      first-time user like June, and how the navigation should consolidate menu items that had
+      drifted into inconsistent groupings on the live site.
+    </p>
+
+    <h2>User Testing & Feedback</h2>
+    <p>
+      We tested the system informally with teammates and peers rather than running structured
+      sessions with real Cascade members or external users. That's a real limitation of this
+      project — peer feedback caught usability issues at the component level, but it can't fully
+      stand in for testing with people who don't already understand the system's intent.
+    </p>
+
+    <h2>The Design System</h2>
+    <p>
+      Below is the full visual system and component library — color tokens, typography, button
+      and form components, and the patterns that tie them together into real page layouts.
+      Click through if you want the detail; the short version is below the carousel either way.
+    </p>
+
+    <div class="carousel" id="radian-carousel">
+      <div class="carousel-viewport">
+        <div class="carousel-track" id="carousel-track">
+
+          <div class="carousel-slide">
+            <img src="../assets/radian/colors.png" alt="Radian color system: Cascade green primary, secondary greens and oranges, and neutral grays, each with hex values" />
+            <div class="carousel-slide-label">Color System</div>
+            <div class="carousel-slide-caption">Primary, secondary, and neutral tokens — named and documented with exact hex values, built around Cascade's brand green.</div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="../assets/radian/typography.png" alt="Radian type scale: h1 through h5 in Raleway, with point sizes documented" />
+            <div class="carousel-slide-label">Typography</div>
+            <div class="carousel-slide-caption">Full h1–h5 scale in Raleway — confident enough for headers, still legible for dense content like event descriptions.</div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="../assets/radian/components-buttons-nav.png" alt="Radian button component states and full navigation bar with Cascade branding" />
+            <div class="carousel-slide-label">Buttons & Navigation</div>
+            <div class="carousel-slide-caption">Every button built with real interaction states (enabled, hovered, icon variant) — not just a single static version of each element.</div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="../assets/radian/components-forms.png" alt="Radian sign-in form, account creation form, and event card component" />
+            <div class="carousel-slide-label">Forms & Cards</div>
+            <div class="carousel-slide-caption">Sign-in and account creation built fully labeled and linear — the direct product of designing for June, not just Tom.</div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="../assets/radian/patterns.png" alt="Radian patterns: composed form layout, card grid layout, and vertical event list layout" />
+            <div class="carousel-slide-label">Patterns</div>
+            <div class="carousel-slide-caption">Components composed into real, reusable page layouts — proof the library holds up at the page level, not just as isolated pieces.</div>
+          </div>
+
+        </div>
+        <button class="carousel-arrow prev" onclick="radianCarouselMove(-1)" aria-label="Previous">‹</button>
+        <button class="carousel-arrow next" onclick="radianCarouselMove(1)" aria-label="Next">›</button>
+      </div>
+      <div class="carousel-dots" id="carousel-dots"></div>
+    </div>
+
+    <h2>Prototypes</h2>
+    <p>
+      The system was built out into working prototypes for both desktop and mobile, confirming
+      the component library held up responsively rather than just looking good as static
+      documentation.
+    </p>
+    <div class="callout">
+      <span class="callout-label">Gap — prototype links expired</span>
+      The original Figma prototype links were hosted under a university account and no longer
+      resolve three+ years later. I don't have screenshots of the actual prototype screens — only
+      the design system used to build them. If asked in an interview, I'll say exactly that, while
+      still being able to speak to the system and the decisions behind it in detail.
+    </div>
+
+    <h2>My Contribution</h2>
+    <p>
+      Across this 4-person team, my work spanned both sides of the project: persona research and
+      the UX rationale behind it, plus hands-on work building out the visual system and
+      components. The clearest fingerprint of that is the throughline from June's persona to the
+      actual form design — that connection didn't happen by accident; it's the kind of thing that
+      only holds together when the same person is thinking about the user problem and the pixel
+      solution at the same time.
+    </p>
+
+    <!-- ============ PHASE 4: DELIVER ============ -->
+    <div class="phase-divider">
+      <div class="phase-divider-num">4</div>
+      <h2>Deliver</h2>
+      <span class="phase-divider-sub">Handoff · Future Iterations · Closing</span>
+    </div>
+
+    <h2>Handoff</h2>
+    <p>
+      This was a class deliverable rather than a formal client engagement, but it had a real
+      delivery moment beyond the classroom: our team presented Radian directly to a Cascade
+      Bicycle Club stakeholder. That presentation was the actual test of whether the system held
+      up outside an academic audience — explaining the rationale (the audit findings, the Tom/June
+      tension, the resulting component decisions) to someone who'd have to live with the system if
+      Cascade chose to adopt it.
+    </p>
+    <p class="gap-note">
+      We didn't define formal success metrics (North Star, leading/lagging indicators) as part of
+      this project, since Radian was never deployed to Cascade's live site. If it had moved
+      forward, the natural metrics would track design consistency over time — fewer one-off
+      component variants shipped, faster page-build time using existing patterns, and direct
+      stakeholder sign-off rate on new pages built from the system.
+    </p>
+
+    <h2>Future Iterations</h2>
+    <ul>
+      <li>Expand the pattern library to cover additional real Cascade page types beyond the ones documented (event detail pages, donation flows, volunteer sign-up)</li>
+      <li>Replace informal peer testing with structured usability sessions involving actual Cascade members across the Tom/June spectrum</li>
+      <li>Document accessibility specs (contrast ratios, focus states) explicitly alongside the visual system</li>
+      <li>Re-export and archive prototype screens immediately at project handoff, rather than relying on a school-hosted Figma file to persist</li>
+    </ul>
+
+    <h2>Closing</h2>
+    <p>
+      Radian is the most complete visual artifact in my portfolio, but revisiting it years later,
+      the real gap is that I no longer have proof the system worked end-to-end — the prototypes
+      that would show it are gone. If I did this over, I'd export static prototype screens or
+      record a walkthrough the moment the project wrapped, instead of trusting a school-hosted
+      Figma file to still exist three years on. What still holds up: the system wasn't just
+      decoration. The audit gave us a real, specific problem — not a vague "make it look better" —
+      and June's need for clarity is directly visible in how the forms were built. The Patterns
+      section proves the components were designed to compose into real layouts, and presenting the
+      finished system to an actual Cascade stakeholder was the moment that mattered most: it's one
+      thing to defend design decisions to a professor, another to defend them to the organization
+      that would actually have to live with the result.
+    </p>
+
+  </div>
+
+  <script>
+    let radianCarouselIndex = 0;
+    const radianSlideCount = 5;
+
+    function radianRenderDots() {
+      const dotsContainer = document.getElementById('carousel-dots');
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < radianSlideCount; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'carousel-dot' + (i === radianCarouselIndex ? ' active' : '');
+        dot.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+        dot.onclick = () => { radianCarouselIndex = i; radianUpdateCarousel(); };
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    function radianUpdateCarousel() {
+      const track = document.getElementById('carousel-track');
+      track.style.transform = `translateX(-${radianCarouselIndex * 100}%)`;
+      radianRenderDots();
+    }
+
+    function radianCarouselMove(direction) {
+      radianCarouselIndex = (radianCarouselIndex + direction + radianSlideCount) % radianSlideCount;
+      radianUpdateCarousel();
+    }
+
+    radianRenderDots();
+  </script>
+
+</body>
+</html>
