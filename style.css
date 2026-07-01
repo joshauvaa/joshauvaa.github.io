@@ -48,6 +48,13 @@ img { display: block; max-width: 100%; }
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border);
 }
+/* .nav-logo {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  color: var(--text);
+} */
 
 .nav-logo {
   font-family: var(--font-display);
@@ -246,6 +253,7 @@ img { display: block; max-width: 100%; }
 .about {
   padding: 8rem 3rem;
   border-top: 1px solid var(--border);
+  width: 100%; 
 }
 .about-grid {
   max-width: 1100px;
@@ -333,7 +341,7 @@ img { display: block; max-width: 100%; }
 }
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.25rem;
 }
 .project-card {
@@ -400,6 +408,79 @@ img { display: block; max-width: 100%; }
 .project-card:hover .card-arrow {
   color: var(--green-accent);
   transform: translateX(4px);
+}
+
+/* === PREVIOUSLY === */
+.previously-section {
+  padding: 6rem 3rem;
+  border-top: 1px solid var(--border);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.previously-heading {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 2.5rem;
+}
+.previously-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+.previously-card {
+  padding: 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  transition: border-color var(--transition), background var(--transition);
+}
+.previously-card:hover {
+  border-color: var(--border-hover);
+  background: var(--bg-card-hover);
+}
+.previously-role {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+.previously-role h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.previously-company {
+  font-size: 0.8rem;
+  color: var(--green-accent);
+  font-weight: 500;
+}
+.previously-card p {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+}
+.previously-takeaway {
+  padding: 0.9rem 1rem;
+  background: var(--green-glow);
+  border-left: 2px solid var(--green-accent);
+  border-radius: 0 8px 8px 0;
+  font-size: 0.82rem;
+  color: var(--text);
+  line-height: 1.55;
+}
+.previously-takeaway-label {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--green-accent);
+  font-weight: 600;
+  margin-bottom: 0.35rem;
 }
 
 /* === CONTACT === */
@@ -495,7 +576,13 @@ img { display: block; max-width: 100%; }
   .about { padding: 5rem 1.5rem; }
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
   .projects-section { padding: 5rem 1.5rem; }
-  .projects-grid { grid-template-columns: 1fr; }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .previously-section { padding: 4rem 1.5rem; }
+  .previously-grid { grid-template-columns: 1fr; }
   .contact-section { padding: 5rem 1.5rem; }
   .footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; }
+}
+
+@media (max-width: 480px) {
+  .projects-grid { grid-template-columns: 1fr; }
 }

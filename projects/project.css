@@ -502,6 +502,83 @@ a { text-decoration: none; color: inherit; }
 }
 .btn-ghost:hover { border-color: var(--green-accent); color: var(--green-accent); }
 
+/* === EXEC SUMMARY === */
+.exec-summary {
+  margin-bottom: 2.5rem;
+  padding: 1.75rem 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.exec-summary-label {
+  display: block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+.exec-summary p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  margin-bottom: 0.65rem;
+}
+.exec-summary p:last-child { margin-bottom: 0; }
+.exec-summary strong { color: var(--text); font-weight: 600; }
+
+/* === SERVICE COMPARISON === */
+.service-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 1.5rem 0 1.75rem;
+}
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.service-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+.service-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 0.5rem;
+  align-items: start;
+}
+.service-key {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding-top: 0.1rem;
+}
+.service-val {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+.service-val strong { color: var(--text); }
+.service-row--gap .service-key { color: var(--green-accent); }
+.service-row--gap .service-val { color: var(--text); }
+
+@media (max-width: 600px) {
+  .service-comparison { grid-template-columns: 1fr; }
+}
+
 /* === EXPANDABLE CAROUSEL IMAGES === */
 .carousel-slide img {
   cursor: zoom-in;

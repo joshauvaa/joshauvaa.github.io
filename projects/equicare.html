@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png">
   <link rel="stylesheet" href="project.css" />
 </head>
+
 <body>
   <nav class="nav">
     <a href="../index.html" class="nav-logo">joshuauvaa</a>
@@ -15,12 +17,11 @@
   </nav>
 
   <div class="project-hero">
-    <div class="project-tag">Systems Analysis · Agile Backlog Management · Pay Equity</div>
+    <div class="project-tag">Systems Analysis · Requirements · Product Backlog</div>
     <h1>EquiCare</h1>
     <p class="lead">
       A requirements-driven HRIS update designed to surface and reduce pay disparities across
-      a global retail organization — built through stakeholder analysis, compliance research,
-      and detailed wireframing rather than a tested live product.
+      a global retail organization.
     </p>
     <div class="project-meta">
       <div class="meta-item">
@@ -33,7 +34,7 @@
       </div>
       <div class="meta-item">
         <span class="meta-label">Context</span>
-        <span class="meta-value">IS & Product Management Course - 10 weeks</span>
+        <span class="meta-value">IS & Product Management Course - 10 weeks (Sep 2023 - Dec 2023)</span>
       </div>
       <div class="meta-item">
         <span class="meta-label">Deliverables</span>
@@ -44,15 +45,16 @@
 
   <div class="project-body">
 
-    <div class="callout">
-      <span class="callout-label">How to read this case study</span>
-      Unlike DawgRide, this project never reached a built, user-tested product — it's a
-      requirements and systems analysis exercise for a fictional retail organization
-      ("Global Retail United"). The strength here is in stakeholder analysis, a genuinely
-      disciplined Agile backlog (30+ epics/features/stories with real acceptance criteria),
-      and translating abstract requirements into concrete wireframes — not in iterative user
-      testing. I'm framing it honestly rather than dressing it up as something it isn't.
-    </div>
+    <section class="exec-summary">
+      <span class="exec-summary-label">Executive Summary</span>
+      <p><strong>Challenge:</strong> Design an HRIS enhancement capable of identifying pay disparities across a global
+        retail organization while balancing HR operations, legal compliance, security, and scalability.</p>
+      <p><strong>Role:</strong> Requirements Analyst responsible for stakeholder analysis, product requirements,
+        backlog definition, and translating business goals into implementation-ready specifications.</p>
+      <p><strong>Outcome:</strong> Produced stakeholder analysis, role-based access controls, non-functional
+        requirements, 30+ backlog items, and interactive wireframes that translated a complex business problem into a
+        development-ready product plan.</p>
+    </section>
 
     <!-- ============ PHASE 1: DISCOVER ============ -->
     <div class="phase-divider">
@@ -61,7 +63,7 @@
       <span class="phase-divider-sub">Business Problem · Market · Goal</span>
     </div>
 
-    <h2>The Business Problem</h2>
+    <h2>Problem Statement</h2>
     <p>
       Global Retail United (GRU), a global retail organization with over 4,000 stores across
       40+ countries, manages compensation through a manual, decentralized system — each
@@ -76,21 +78,21 @@
       with real-time data, and give HR and legal teams the tools to act on what they found.
     </p>
 
-    <h2>The Market</h2>
-    <p class="gap-note">
-      The team did look at existing pay-equity and HRIS tooling as part of this project, but that
-      research is a couple of years old now and I no longer have the original notes or sources to
-      cite accurately. Rather than reconstruct it from memory and risk misattributing specific
-      tools or claims, I'm naming the gap directly — the research happened, but I can't stand
-      behind the specifics anymore.
-    </p>
+    <h2>Market Research</h2>
+    <p>We evaluated existing HRIS and pay-equity solutions to understand common capabilities and identify opportunities
+      for improvement. While the original research informed our recommendations, the supporting documentation is no
+      longer available, so this case study focuses on the resulting product decisions and planning artifacts.</p>
 
     <h2>The Goal</h2>
     <p>
       Give GRU's HR and legal teams real-time visibility into pay disparities across the
       organization, replacing department-by-department guesswork with a single, centralized
-      source of truth — so disparities could be caught and addressed before they became legal or
-      reputational liabilities, rather than discovered after the fact.
+      source of truth to highlight them before they became legal/reputational liabilities.
+    </p>
+    <p>
+      Our team reasoned that a centralized system with role-based access, real-time reporting, and standardized
+      compensation criteria would address the organization's biggest operational and compliance risks while minimizing
+      implementation complexity.
     </p>
 
     <!-- ============ PHASE 2: DEFINE ============ -->
@@ -102,9 +104,8 @@
 
     <h2>Stakeholder Analysis</h2>
     <p>
-      Six distinct stakeholder roles were identified, each with different needs and different
-      relationships to the pay equity problem — from the VP of HR needing visibility, to the
-      Chief Security Officer needing to protect the sensitive data the system would now centralize.
+      Because compensation decisions affect multiple parts of the organization, one of our first priorities was
+      identifying the stakeholders who would rely on—or be affected by—the system.
     </p>
     <table>
       <tr>
@@ -229,27 +230,36 @@
 
     <h2>Wireframes</h2>
     <p>
-      Three core screens were designed in Axure, each annotated with interaction logic rather
-      than left as static mockups. Click any image to view it full size.
+      We focused on three high-value experiences that demonstrated the product's
+      core functionality and stakeholder priorities. Our wireframes was annotated with interaction logic to communicate
+      implementation intent.
     </p>
 
     <div class="carousel" id="wireframe-carousel">
       <div class="carousel-viewport">
         <div class="carousel-track" id="wireframe-carousel-track">
           <div class="carousel-slide">
-            <img src="../assets/equicare/wireframe-home.png" alt="EquiCare HRIS home dashboard wireframe" onclick="openLightbox(this.src, this.alt)" />
+            <img src="../assets/equicare/wireframe-home.png" alt="EquiCare HRIS home dashboard wireframe"
+              onclick="openLightbox(this.src, this.alt)" />
             <div class="carousel-slide-label">Home Dashboard</div>
-            <div class="carousel-slide-caption">Role-personalized announcements, awaiting actions, and upcoming dates with direct links to source tasks.</div>
+            <div class="carousel-slide-caption">Role-personalized announcements, awaiting actions, and upcoming dates
+              with direct links to source tasks.</div>
           </div>
           <div class="carousel-slide">
-            <img src="../assets/equicare/wireframe-comparison-tool.png" alt="EquiCare pay comparison tool wireframe" onclick="openLightbox(this.src, this.alt)" />
+            <img src="../assets/equicare/wireframe-comparison-tool.png" alt="EquiCare pay comparison tool wireframe"
+              onclick="openLightbox(this.src, this.alt)" />
             <div class="carousel-slide-label">Comparison Tool</div>
-            <div class="carousel-slide-caption">The centerpiece of EquiCare. Built directly against User Story 19 ("As a manager, I want to compare similarly leveled employees and know the percentage difference in pay"). Surfaces an Employee Score, pay trend over time, and an explicit calculated disparity ("Employee 2 is making 30% less than the average manager").</div>
+            <div class="carousel-slide-caption">The centerpiece of EquiCare. Built directly against User Story 19 ("As a
+              manager, I want to compare similarly leveled employees and know the percentage difference in pay").
+              Surfaces an Employee Score, pay trend over time, and an explicit calculated disparity ("Employee 2 is
+              making 30% less than the average manager").</div>
           </div>
           <div class="carousel-slide">
-            <img src="../assets/equicare/wireframe-pay.png" alt="EquiCare payroll management wireframe" onclick="openLightbox(this.src, this.alt)" />
+            <img src="../assets/equicare/wireframe-pay.png" alt="EquiCare payroll management wireframe"
+              onclick="openLightbox(this.src, this.alt)" />
             <div class="carousel-slide-label">Pay Screen</div>
-            <div class="carousel-slide-caption">Role-gated payroll sheet with CSV import/export and a role-distribution breakdown, reflecting the access control table above directly in the UI.</div>
+            <div class="carousel-slide-caption">Role-gated payroll sheet with CSV import/export and a role-distribution
+              breakdown, reflecting the access control table above directly in the UI.</div>
           </div>
         </div>
         <button class="carousel-arrow prev" onclick="wireframeCarouselMove(-1)" aria-label="Previous">‹</button>
@@ -259,32 +269,31 @@
     </div>
 
     <p>
-      The Comparison Tool is the strongest artifact in this project because it's the one place
-      where the abstract goal — "detect pay disparity" — becomes a concrete, usable interface.
-      Rather than just reporting raw numbers, it does the interpretive work for the user: calculating
-      and stating the percentage gap against role averages, so a manager doesn't have to do that
-      math themselves to notice a problem.
+      Rather than a polished UI, these mockups served as communication tools translating
+      requirements into concrete user experiences developers could understand and implement.
     </p>
 
     <h2>Agile Process &amp; Backlog</h2>
     <p>
-      EquiCare's requirements were broken down using a standard three-tier Agile hierarchy:
-      <strong>Epics → Features → User Stories</strong>, all tracked in Azure Boards. This
-      wasn't loosely structured — the backlog held 30+ work items with full traceability from
+      EquiCare's requirements were broken down using a standard three-tier Agile hierarchy,
+      (Epics → Features → User Stories) all tracked in Azure Boards. The backlog held 30+ work items with full
+      traceability from
       high-level business goals down to testable acceptance criteria, and a portion of that
       backlog was pulled into a defined Sprint 1.
     </p>
     <p class="gap-note">
-      To be precise about process maturity: this was run as a loosely sprinted workflow rather
-      than strict, by-the-book Scrum — there were no formal sprint review/retro ceremonies
+      In practice, this was run as a loosely sprinted workflow rather
+      than strict, by-the-book Scrum. No formal sprint review/retro ceremonies
       tracked in the tool, and iteration dates weren't always set. The backlog structure and
-      story-writing discipline were real; the ceremony cadence was informal.
+      story-writing were emphasized.
     </p>
 
-    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--green-accent); margin-bottom: 0.75rem;">Backlog Hierarchy</h3>
+    <h3
+      style="font-family: var(--font-display); font-size: 1.1rem; color: var(--green-accent); margin-bottom: 0.75rem;">
+      Backlog Hierarchy</h3>
     <p>
-      Each Epic decomposed into Features, which then decomposed into individually testable User
-      Stories. For example:
+      Epics decomposed into Features, and further into individually testable User
+      Stories. Ex:
     </p>
     <table>
       <tr>
@@ -295,25 +304,28 @@
       <tr>
         <td>Ensure Integration With Existing Systems</td>
         <td>Offer Single Sign-On Support (SSO)</td>
-        <td>#5 — HR Manager: As an HR manager, I would like to be able to access different systems at the same time without having to log in multiple times.</td>
+        <td>#5 — HR Manager: As an HR manager, I would like to be able to access different systems at the same time
+          without having to log in multiple times.</td>
       </tr>
       <tr>
         <td>Ensure Integration With Existing Systems</td>
         <td>Develop APIs for system to communicate with other systems</td>
-        <td>#6 — Payroll Manager: As a payroll manager, I would like to integrate a payroll processing API to our HRIS to automate data transfer and reduce human error.</td>
+        <td>#6 — Payroll Manager: As a payroll manager, I would like to integrate a payroll processing API to our HRIS
+          to automate data transfer and reduce human error.</td>
       </tr>
       <tr>
         <td>Document Employee Learning Performance</td>
         <td>Improvement Recommendation</td>
-        <td>#11 - As an employee of GRU, I would like to see how far my progress is in completing the learning material, so I can know much I have left.</td>
+        <td>#11 - As an employee of GRU, I would like to see how far my progress is in completing the learning material,
+          so I can know much I have left.</td>
       </tr>
     </table>
 
-    <h3 style="font-family: var(--font-display); font-size: 1.1rem; color: var(--green-accent); margin-bottom: 0.75rem; margin-top: 2rem;">Sprint 1 — Selected User Stories</h3>
+    <!-- <h3
+      style="font-family: var(--font-display); font-size: 1.1rem; color: var(--green-accent); margin-bottom: 0.75rem; margin-top: 2rem;">
+      Sprint 1 — Selected User Stories</h3>
     <p>
-      Nine user stories were pulled into Sprint 1. Each followed proper "As a [role], I want
-      [goal], so that [benefit]" framing with explicit, testable acceptance criteria —
-      not vague feature descriptions.
+      Nine user stories were pulled into Sprint 1.
     </p>
     <table>
       <tr>
@@ -344,24 +356,15 @@
       <tr>
         <td>47</td>
         <td>Employee — Minimal System Downtime: reliable 24/7 access to pay/performance data</td>
-        <td>99.9% availability; downtime under 1.45 min/day; 5-hour advance notice; access denied gracefully during downtime</td>
+        <td>99.9% availability; downtime under 1.45 min/day; 5-hour advance notice; access denied gracefully during
+          downtime</td>
       </tr>
       <tr>
         <td>48</td>
         <td>Legal Officer — Scheduled Downtime Alerts: advance notice to stay compliant</td>
         <td>5-hr notice for maintenance, 24-hr for non-maintenance; support contact available during downtime</td>
       </tr>
-    </table>
-    <p>
-      Story #47 is a good example of the backlog doing real work: it takes the abstract NFR
-      target from the Vision &amp; Scope doc ("three nines availability") and turns it into a
-      concrete, testable condition — under 1.45 minutes of downtime per day, with a defined
-      advance-notice window. Stories #11 and #12 are also a nice pair — the same underlying
-      feature (learning progress tracking) written twice, once from the employee's perspective
-      and once from the manager's, which is good practice for making sure a feature actually
-      serves both ends of a relationship rather than just one.
-    </p>
-
+    </table> -->
 
     <!-- ============ PHASE 4: DELIVER ============ -->
     <div class="phase-divider">
@@ -382,18 +385,13 @@
     </p>
 
     <h2>Closing</h2>
-    <p>
-      EquiCare never left the documentation and wireframing stage — there was no working
-      prototype to test with real users, and no opportunity to validate whether the Comparison
-      Tool's disparity calculations would actually change a manager's behavior in practice. That's
-      a real limitation, and I think it's more useful to name it directly than to imply otherwise.
-      What this project did teach me is how much of product work happens before a single screen
-      gets built — translating a vague organizational concern ("we might have pay disparities")
-      into specific user stories, measurable non-functional requirements, and a permission model
-      that actually reflects who should see what. That discipline is different from, but just as
-      necessary as, the iterative testing work I did on DawgRide.
-    </p>
-
+    <p>Although EquiCare concluded during the planning and design phase, it reinforced how much product management
+      happens before development begins. Translating an ambiguous business problem into clear stakeholder needs,
+      prioritized requirements, and implementation-ready documentation was tedious. But understanably so considering all
+      of the nuances behind the products of the age.</p>
+    <p>The project strengthened my appreciation for the planning work that enables successful execution. Software
+      development can be an absolute mess without clear
+      requirements, thoughtful prioritization, and well-defined constraints.</p>
   </div>
 
   <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
